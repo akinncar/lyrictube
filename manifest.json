@@ -1,0 +1,21 @@
+{
+  "name": "LyricTube Chrome Extension",
+  "version": "1.0",
+  "description": "Lyrics for Youtube music vídeos!",
+  "permissions": ["activeTab", "storage"],
+  "background": {
+    "scripts": ["./src/background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "run_at": "document_end",
+      "matches": ["<all_urls>"],
+      "js": ["./src/jQuery.js", "./src/script.js"]
+    }
+  ],
+  "browser_action": {
+    "default_popup": "./src/index.html"
+  },
+  "manifest_version": 2
+}
