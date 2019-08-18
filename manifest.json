@@ -4,18 +4,18 @@
   "description": "Lyrics for Youtube music vídeos!",
   "permissions": ["activeTab", "storage"],
   "background": {
-    "scripts": ["./src/background.js"],
+    "scripts": ["background.js"],
     "persistent": false
   },
   "content_scripts": [
     {
       "run_at": "document_end",
       "matches": ["<all_urls>"],
-      "js": ["./src/jQuery.js", "./src/script.js"]
+      "js": ["jQuery.js", "script.js"]
     }
   ],
   "browser_action": {
-    "default_popup": "./src/index.html"
+    "default_popup": "index.html"
   },
   "manifest_version": 2
 }
